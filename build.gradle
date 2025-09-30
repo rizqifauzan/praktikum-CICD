@@ -1,0 +1,31 @@
+plugins {
+    id 'java'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'junit:junit:4.13.2'
+
+    // Cucumber JUnit 4 dependency
+    testImplementation 'io.cucumber:cucumber-java:7.15.0'  // Cucumber for Java
+    testImplementation 'io.cucumber:cucumber-junit:7.15.0'  // Cucumber JUnit integration
+    testImplementation 'io.rest-assured:rest-assured:5.5.0'
+    testImplementation 'com.google.code.gson:gson:2.11.0'
+
+
+
+}
+
+test {
+    useJUnit()
+//    systemProperty 'cucumber.features', 'classpath:features/calculator.feature'  // Tentukan lokasi file feature
+//    // Menonaktifkan log Cucumber untuk peringatan
+//    jvmArgs '-Dorg.slf4j.simpleLogger.log.io.cucumber=error'
+
+    testLogging {
+        events "passed", "skipped", "failed"
+    }
+}
