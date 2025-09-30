@@ -33,3 +33,10 @@ jobs:
         with:
           name: cucumber-reports
           path: target/index.html
+
+      - name: Deploy to GitHub Pages
+        if: always()
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.PAT }}
+          publish_dir: target
