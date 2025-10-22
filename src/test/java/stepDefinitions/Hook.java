@@ -6,7 +6,7 @@ import io.cucumber.java.Scenario;
 
 public class Hook {
 
-    private final int runId = 17; // ID Test Run di TestRail
+    private final int runId = 18; // ID Test Run di TestRail
 
     @After
     public void afterScenario(Scenario scenario) {
@@ -14,7 +14,8 @@ public class Hook {
             // Cari tag @C1234 (Case ID)
             String caseIdTag = scenario.getSourceTagNames()
                     .stream()
-                    .filter(tag -> tag.startsWith("@C"))
+                   // .filter(tag -> tag.startsWith("@C"))
+                    .filter(tag -> tag.matches("@Kal"))
                     .findFirst()
                     .orElse(null);
 

@@ -1,13 +1,13 @@
 @cc
 Feature: Calculator
 
-  @C1 @Kalkulator
+  @C16 @Kalkulator
   Scenario: Add two numbers
     Given I have two numbers 5 and 3
     When I add them
     Then the result should be 8
 
-  @C2
+  @C-17
   Scenario: Subtract two numbers
     Given I have two numbers 10 and 4
     When I subtract them
